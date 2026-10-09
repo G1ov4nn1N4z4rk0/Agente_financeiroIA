@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Web - Assistente Financeiro IA</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/avatar.svg">
+</head>
+<body>
+  <!-- Faixa verde superior característica do WhatsApp Web -->
+  <div class="top-green-bar"></div>
+
+  <!-- Container principal do WhatsApp Web -->
+  <div class="whatsapp-app">
+    
+    <!-- Painel Lateral Esquerdo (Conversas e Informações) -->
+    <aside class="sidebar" id="sidebar">
+      
+      <!-- Cabeçalho do usuário -->
+      <header class="sidebar-header">
+        <div class="user-profile">
+          <img src="/assets/user.svg" alt="Seu Perfil" class="avatar-img">
+          <div class="user-meta">
+            <span class="user-title">Você</span>
+            <span class="user-subtitle">Demonstração Acadêmica</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="btn-info" title="Informações e Diagnóstico do Azure" aria-label="Informações">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+          </button>
+          <button class="icon-btn" id="btn-sidebar-reset" title="Reiniciar Conversa" aria-label="Reiniciar">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Barra de Pesquisa e Filtros -->
+      <div class="search-container">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="#667781">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+          <input type="text" id="chat-search" placeholder="Pesquisar conversa ou despesa..." autocomplete="off">
+        </div>
+        <div class="filter-chips">
+          <span class="chip active">Todas</span>
+          <span class="chip">Não lidas</span>
+          <span class="chip">IA Financeira</span>
+        </div>
+      </div>
+
+      <!-- Lista de Contatos/Conversas -->
+      <div class="chat-list" id="chat-list">
+        <!-- Item do Agente Financeiro (Ativo) -->
+        <div class="chat-item active" id="chat-item-agent">
+          <div class="avatar-wrapper">
+            <img src="/assets/avatar.svg" alt="Assistente Financeiro IA" class="avatar-img">
+            <span class="online-indicator" title="Online no Azure AI"></span>
+          </div>
+          <div class="chat-info">
+            <div class="chat-header-row">
+              <span class="chat-contact-name">
+                Assistente Financeiro IA
+                <svg class="verified-icon" viewBox="0 0 24 24" width="16" height="16" fill="#00a884" title="Verificado Azure AI">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </span>
+              <span class="chat-time" id="sidebar-last-time">Hoje</span>
+            </div>
+            <div class="chat-preview-row">
+              <span class="message-preview" id="sidebar-preview">
+                Olá! Eu sou seu assistente de controle financeiro pessoal...
+              </span>
+              <span class="badge-azure">Azure AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé da barra lateral com status do Azure -->
+      <div class="sidebar-status-card">
+        <div class="status-indicator-dot online" id="azure-dot"></div>
+        <div class="status-texts">
+          <span class="status-title" id="azure-status-text">Azure AI: Conectado</span>
+          <span class="status-detail" id="azure-agent-name-display">giovanni01-agente</span>
+        </div>
+        <button class="status-reload-btn" id="btn-check-status" title="Atualizar status do Azure">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+          </svg>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- Área Principal de Conversa (Chat) -->
+    <main class="chat-area">
+      
+      <!-- Cabeçalho do Chat -->
+      <header class="chat-header">
+        <div class="chat-header-contact">
+          <div class="avatar-wrapper">
+            <img src="/assets/avatar.svg" alt="Avatar" class="avatar-img">
+            <span class="online-indicator"></span>
+          </div>
+          <div class="chat-header-text">
+            <h2 class="chat-title">
+              Assistente Financeiro IA
+              <svg class="verified-icon" viewBox="0 0 24 24" width="16" height="16" fill="#00a884" title="Agente Oficial Azure AI">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </h2>
+            <p class="chat-status" id="chat-status-subtitle">online • Azure AI (giovanni01-agente)</p>
+          </div>
+        </div>
+
+        <div class="chat-header-actions">
+          <button class="action-btn" id="btn-reset-chat" title="Iniciar Nova Conversa (Limpa Histórico)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+            </svg>
+            <span>Nova Conversa</span>
+          </button>
+          <button class="icon-btn" id="btn-header-info" title="Detalhes do Agente Azure">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Painel de Mensagens com Fundo WhatsApp -->
+      <section class="messages-container" id="messages-container">
+        
+        <!-- Alerta de Segurança e Criptografia do WhatsApp / Azure AI -->
+        <div class="encryption-notice">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#54656f">
+            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+          </svg>
+          <span>As mensagens são processadas com segurança de ponta a ponta pelo agente oficial <strong>giovanni01-agente</strong> no Azure AI Foundry.</span>
+        </div>
+
+        <!-- Divisor de Data -->
+        <div class="date-divider">
+          <span>HOJE</span>
+        </div>
+
+        <!-- Mensagens Dinâmicas -->
+        <div class="messages-flow" id="messages-flow">
+          <!-- Mensagem inicial de boas-vindas do agente -->
+          <div class="message-bubble incoming" data-id="msg-welcome">
+            <div class="bubble-content">
+              <div class="sender-name">Assistente Financeiro IA</div>
+              <div class="message-text">
+                Olá! Eu sou seu assistente de controle financeiro pessoal. Posso te ajudar a registrar gastos, categorizar despesas, identificar excessos e mostrar quanto ainda resta do seu orçamento.<br><br>
+                Para começar, me diga: <strong>qual é o seu nome?</strong>
+              </div>
+              <div class="message-time">16:50</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicador de Digitação (Typing Indicator) -->
+        <div class="typing-indicator-wrapper" id="typing-indicator" style="display: none;">
+          <div class="typing-bubble">
+            <div class="typing-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="typing-text">Assistente financeiro digitando...</span>
+          </div>
+        </div>
+
+        <!-- Âncora de Rolagem Automática -->
+        <div id="scroll-bottom-anchor"></div>
+      </section>
+
+      <!-- Rodapé / Barra de Envio de Mensagem -->
+      <footer class="chat-input-bar">
+        <button class="icon-btn" id="btn-emoji" title="Emojis" aria-label="Inserir Emoji">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="#54656f">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+          </svg>
+        </button>
+
+        <button class="icon-btn" id="btn-attach" title="Anexar comprovante ou gasto" aria-label="Anexar">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="#54656f">
+            <path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5a2.5 2.5 0 0 1 5 0v10.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5V6H9v9.5a3 3 0 0 0 6 0V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z"/>
+          </svg>
+        </button>
+
+        <!-- Campo de Texto -->
+        <div class="input-wrapper">
+          <textarea
+            id="message-input"
+            rows="1"
+            placeholder="Mensagem (ex: Meu nome é Lucas e meu orçamento é R$ 3.000)"
+            autocomplete="off"
+          ></textarea>
+        </div>
+
+        <!-- Botão de Enviar -->
+        <button class="send-btn" id="btn-send" title="Enviar Mensagem (Enter)" aria-label="Enviar Mensagem">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#54656f" id="icon-send">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Modal de Diagnóstico e Conexão Azure -->
+  <div class="modal-overlay" id="diag-modal" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Diagnóstico da Conexão com Azure AI</h3>
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="info-row">
+          <span class="info-label">Nome do Agente:</span>
+          <span class="info-value font-mono" id="modal-agent-name">giovanni01-agente</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Endpoint do Projeto:</span>
+          <span class="info-value font-mono break-all" id="modal-endpoint">https://aula-agente-lucas-resource.services.ai.azure.com/api/projects/aula-agente-lucas</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Autenticação:</span>
+          <span class="info-badge green">DefaultAzureCredential (Azure CLI / az login)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Sessão Local:</span>
+          <span class="info-value font-mono" id="modal-session-id">-</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Azure Conversation ID:</span>
+          <span class="info-value font-mono break-all" id="modal-conversation-id">-</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Status da Conexão:</span>
+          <span class="info-badge" id="modal-status-badge">Verificando...</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary" id="btn-refresh-diag">Atualizar Status</button>
+        <button class="btn-secondary" id="btn-modal-ok">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container de Notificações Toast -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

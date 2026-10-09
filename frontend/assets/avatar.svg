@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#005a54"/>
+      <stop offset="100%" stop-color="#00a884"/>
+    </linearGradient>
+    <linearGradient id="coinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#ff9900"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGrad)" stroke="#25d366" stroke-width="2"/>
+  
+  <!-- Robot/AI Head outline -->
+  <rect x="28" y="32" width="44" height="36" rx="10" fill="#ffffff" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.2))"/>
+  
+  <!-- Antenna -->
+  <line x1="50" y1="22" x2="50" y2="32" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="50" cy="20" r="4" fill="#25d366"/>
+
+  <!-- Ears/Headphones -->
+  <rect x="23" y="42" width="6" height="16" rx="3" fill="#00a884"/>
+  <rect x="71" y="42" width="6" height="16" rx="3" fill="#00a884"/>
+  
+  <!-- Screen/Eyes area -->
+  <rect x="34" y="38" width="32" height="16" rx="6" fill="#111b21"/>
+  <!-- Glowing Cyan Eyes -->
+  <ellipse cx="43" cy="46" rx="3.5" ry="4" fill="#00f2fe"/>
+  <ellipse cx="57" cy="46" rx="3.5" ry="4" fill="#00f2fe"/>
+  <circle cx="44.5" cy="44.5" r="1.2" fill="#ffffff"/>
+  <circle cx="58.5" cy="44.5" r="1.2" fill="#ffffff"/>
+
+  <!-- Friendly Smile -->
+  <path d="M 44 59 Q 50 63 56 59" stroke="#00a884" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Finance Badge / Coin on chest -->
+  <circle cx="73" cy="73" r="14" fill="url(#coinGrad)" stroke="#ffffff" stroke-width="2"/>
+  <text x="73" y="78" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">$</text>
+</svg>
